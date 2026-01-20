@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Instagram, MapPin, Calendar, Gift, Users, Heart, ChevronDown, Star, Sparkles, Megaphone } from 'lucide-react';
 
 const App = () => {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     const [scrollY, setScrollY] = useState(0);
     const [typedMessage, setTypedMessage] = useState("");
+    const [startTyping, setStartTyping] = useState(false);
+    const messageSectionRef = useRef(null);
     const fullMessage = "30歳。それは、かつての夢を現実に変え、新しい自分に出会う場所。多治見の空の下で、僕らはまた一歩、大人になる。共に祝おう、この特別な節目を。";
 
     // Countdown Logic
@@ -35,9 +37,30 @@ const App = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Typing Effect
+    // Typing Effect with Intersection Observer
     useEffect(() => {
-        if (scrollY > 2200) {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setStartTyping(true);
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        if (messageSectionRef.current) {
+            observer.observe(messageSectionRef.current);
+        }
+
+        return () => {
+            if (messageSectionRef.current) {
+                observer.unobserve(messageSectionRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (startTyping) {
             let i = 0;
             const typingTimer = setInterval(() => {
                 setTypedMessage(fullMessage.slice(0, i));
@@ -46,13 +69,13 @@ const App = () => {
             }, 60);
             return () => clearInterval(typingTimer);
         }
-    }, [scrollY > 2200]);
+    }, [startTyping]);
 
 
 
     const guests = [
-        { name: "呂布カルマ", sub: "SPECIAL GUEST", color: "bg-pink-500", image: "/ryoff-karma.png" },
-        { name: "Legal nerd boyz", sub: "シラフ / TOKYO 世界 / SKINNY YMT", color: "bg-cyan-500", image: "/legal-nerd-boyz.png" }
+        { name: "呂布カルマ", sub: "SPECIAL GUEST", color: "bg-pink-500", image: "/ryoff-karma.png", url: "https://www.instagram.com/ryoff000karma/" },
+        { name: "Legal nerd boyz", sub: "シラフ / TOKYO 世界 / SKINNY YMT", color: "bg-cyan-500", image: "/legal-nerd-boyz.png", url: "https://www.instagram.com/legalnerdboyz/" }
     ];
 
     return (
@@ -138,9 +161,9 @@ const App = () => {
                     </h1>
 
                     <div className="bg-white border-4 border-black p-4 md:p-6 rounded-[30px] shadow-[8px_8px_0px_#000] inline-block mb-6">
-                        <div className="text-center mb-2 font-black">
-                            <p className="text-2xl mb-1">2026.3.22 (SUN)</p>
-                            <p className="text-sm text-gray-600">開催まで...</p>
+                        <div className="text-center mb-4 font-black">
+                            <p className="text-3xl md:text-5xl mb-2">2026.3.22 <span className="text-pink-500">(SUN)</span></p>
+                            <p className="text-sm md:text-base text-gray-600">開催まで...</p>
                         </div>
                         <div className="flex gap-4 md:gap-6 justify-center">
                             {[
@@ -180,23 +203,25 @@ const App = () => {
                         <Sparkles className="text-pink-500" /> GUESTS
                     </h2>
 
-                    <div className="grid grid-cols-2 gap-4 md:gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                         {guests.map((guest, idx) => (
-                            <div key={idx} className="relative group">
-                                <div className="absolute inset-0 bg-black rounded-3xl translate-x-3 translate-y-3" />
-                                <div className={`relative ${guest.color} border-4 border-black rounded-3xl p-8 hover:-translate-y-2 transition-transform h-full`}>
-                                    <p className="text-white font-black text-sm tracking-widest mb-2">{guest.sub}</p>
-                                    <h3 className="text-4xl md:text-6xl font-black italic text-white leading-tight drop-shadow-lg">
-                                        {guest.name}
-                                    </h3>
-                                    <div className="mt-8 aspect-square bg-white/20 rounded-2xl border-4 border-black flex items-center justify-center overflow-hidden">
-                                        <img
-                                            src={guest.image}
-                                            alt={guest.name}
-                                            className="w-full h-full object-cover"
-                                        />
+                            <div key={idx} className="relative group cursor-pointer">
+                                <a href={guest.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                                    <div className="absolute inset-0 bg-black rounded-3xl translate-x-3 translate-y-3" />
+                                    <div className={`relative ${guest.color} border-4 border-black rounded-3xl p-8 hover:-translate-y-2 transition-transform h-full`}>
+                                        <p className="text-white font-black text-sm tracking-widest mb-2">{guest.sub}</p>
+                                        <h3 className="text-4xl md:text-6xl font-black italic text-white leading-tight drop-shadow-lg">
+                                            {guest.name}
+                                        </h3>
+                                        <div className="mt-8 aspect-square bg-white/20 rounded-2xl border-4 border-black flex items-center justify-center overflow-hidden">
+                                            <img
+                                                src={guest.image}
+                                                alt={guest.name}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         ))}
                     </div>
@@ -221,7 +246,7 @@ const App = () => {
             </section>
 
             {/* Message Section */}
-            <section className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-32 border-t-8 border-black">
+            <section ref={messageSectionRef} className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-32 border-t-8 border-black">
                 <div className="max-w-3xl w-full text-center">
                     <div className="min-h-[200px] text-3xl md:text-5xl font-black leading-snug text-black">
                         {typedMessage}

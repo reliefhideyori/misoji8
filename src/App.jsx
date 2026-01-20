@@ -76,6 +76,14 @@ const App = () => {
         .animate-float {
           animation: float 4s ease-in-out infinite;
         }
+        @keyframes slow-pulse {
+          0%, 100% { opacity: 0.2; }
+          50% { opacity: 0.5; }
+        }
+        .animate-slow-pulse {
+          animation: slow-pulse 4s ease-in-out infinite;
+          transition: all 0.3s ease-out;
+        }
         .text-outline {
           -webkit-text-stroke: 2px black;
           color: white;
@@ -101,7 +109,7 @@ const App = () => {
                 {[...Array(15)].map((_, i) => (
                     <Star
                         key={i}
-                        className="absolute text-pink-500 opacity-30 animate-pulse"
+                        className="absolute text-pink-500 opacity-30 animate-slow-pulse"
                         style={{
                             top: `${Math.random() * 100}%`,
                             left: `${Math.random() * 100}%`,

@@ -242,19 +242,19 @@ const App = () => {
                         </div>
                     </div>
 
-                    <div className="relative grid md:grid-cols-2 gap-x-12 gap-y-12 max-w-5xl mx-auto">
+                    <div className="relative grid md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto">
                         {/* Center Line */}
                         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-2 bg-black -translate-x-1/2 rounded-full"></div>
 
                         {/* 11:00 Open */}
                         <div className="md:contents">
-                            <div className="relative md:text-right md:pr-12 md:mb-0 mb-8">
-                                <div className="hidden md:block absolute right-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[50%]"></div>
-                                <div className="flex flex-col md:items-end items-center gap-4">
-                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[-2deg]">
+                            <div className="relative md:text-right md:pr-12 md:mb-0 mb-4">
+                                <div className="hidden md:block absolute right-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-20 translate-x-[50%]"></div>
+                                <div className="flex flex-col md:items-end items-center -space-y-6">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[-2deg] z-10 relative">
                                         11:00
                                     </div>
-                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[280px]">
+                                    <div className="bg-white border-4 border-black px-8 py-4 pt-8 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[280px]">
                                         <span className="font-black text-2xl">開場</span>
                                         <DoorOpen size={32} />
                                     </div>
@@ -266,13 +266,13 @@ const App = () => {
                         {/* 13:00 Ticket Distribution */}
                         <div className="md:contents">
                             <div className="md:col-start-1"></div>
-                            <div className="relative md:pl-12 md:mb-0 mb-8">
-                                <div className="hidden md:block absolute left-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[-50%]"></div>
-                                <div className="flex flex-col md:items-start items-center gap-4">
-                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[2deg]">
+                            <div className="relative md:pl-12 md:mb-0 mb-4">
+                                <div className="hidden md:block absolute left-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-20 translate-x-[-50%]"></div>
+                                <div className="flex flex-col md:items-start items-center -space-y-6">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[2deg] z-10 relative">
                                         13:00
                                     </div>
-                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[320px]">
+                                    <div className="bg-white border-4 border-black px-8 py-4 pt-8 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[320px]">
                                         <span className="font-black text-2xl">抽選券配布開始</span>
                                         <Ticket size={32} />
                                     </div>
@@ -282,13 +282,13 @@ const App = () => {
 
                         {/* 13:45 Mayor Greeting */}
                         <div className="md:contents">
-                            <div className="relative md:text-right md:pr-12 md:mb-0 mb-8">
-                                <div className="hidden md:block absolute right-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[50%]"></div>
-                                <div className="flex flex-col md:items-end items-center gap-4">
-                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[-2deg]">
+                            <div className="relative md:text-right md:pr-12 md:mb-0 mb-4">
+                                <div className="hidden md:block absolute right-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-20 translate-x-[50%]"></div>
+                                <div className="flex flex-col md:items-end items-center -space-y-6">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[-2deg] z-10 relative">
                                         13:45
                                     </div>
-                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[300px]">
+                                    <div className="bg-white border-4 border-black px-8 py-4 pt-8 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[300px]">
                                         <span className="font-black text-2xl">多治見市長挨拶</span>
                                         <Mic size={32} />
                                     </div>
@@ -300,13 +300,13 @@ const App = () => {
                         {/* 14:00 Live Performance */}
                         <div className="md:contents">
                             <div className="md:col-start-1"></div>
-                            <div className="relative md:pl-12 md:mb-0 mb-8">
-                                <div className="hidden md:block absolute left-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[-50%]"></div>
-                                <div className="flex flex-col md:items-start items-center gap-4">
-                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[2deg]">
+                            <div className="relative md:pl-12 md:mb-0 mb-4">
+                                <div className="hidden md:block absolute left-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-20 translate-x-[-50%]"></div>
+                                <div className="flex flex-col md:items-start items-center -space-y-6">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[2deg] z-10 relative">
                                         14:00
                                     </div>
-                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[320px]">
+                                    <div className="bg-white border-4 border-black px-8 py-4 pt-8 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[320px]">
                                         <span className="font-black text-2xl">ライブパフォーマンス</span>
                                         <Music size={32} />
                                     </div>
@@ -316,13 +316,13 @@ const App = () => {
 
                         {/* 15:00 Lottery Results */}
                         <div className="md:contents">
-                            <div className="relative md:text-right md:pr-12 md:mb-0 mb-8">
-                                <div className="hidden md:block absolute right-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[50%]"></div>
-                                <div className="flex flex-col md:items-end items-center gap-4">
-                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[-2deg]">
+                            <div className="relative md:text-right md:pr-12 md:mb-0 mb-4">
+                                <div className="hidden md:block absolute right-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-20 translate-x-[50%]"></div>
+                                <div className="flex flex-col md:items-end items-center -space-y-6">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[-2deg] z-10 relative">
                                         15:00
                                     </div>
-                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[280px]">
+                                    <div className="bg-white border-4 border-black px-8 py-4 pt-8 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[280px]">
                                         <span className="font-black text-2xl">抽選結果発表</span>
                                         <Trophy size={32} />
                                     </div>
@@ -335,12 +335,12 @@ const App = () => {
                         <div className="md:contents">
                             <div className="md:col-start-1"></div>
                             <div className="relative md:pl-12">
-                                <div className="hidden md:block absolute left-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[-50%]"></div>
-                                <div className="flex flex-col md:items-start items-center gap-4">
-                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[2deg]">
+                                <div className="hidden md:block absolute left-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-20 translate-x-[-50%]"></div>
+                                <div className="flex flex-col md:items-start items-center -space-y-6">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[2deg] z-10 relative">
                                         16:00
                                     </div>
-                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[250px]">
+                                    <div className="bg-white border-4 border-black px-8 py-4 pt-8 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[250px]">
                                         <span className="font-black text-2xl">クローズ</span>
                                         <Flag size={32} />
                                     </div>

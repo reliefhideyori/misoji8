@@ -361,12 +361,23 @@ const App = () => {
                         <p className="font-bold text-lg text-black">※画像はイメージです</p>
                     </div>
 
-                    <div className="animate-float inline-block mt-12">
-                        <div className="bg-cyan-400 border-4 border-black p-8 rounded-full shadow-[10px_10px_0px_#000] rotate-[-5deg]">
-                            <Gift size={64} className="mx-auto mb-4" />
-                            <h3 className="text-4xl font-black italic">豪華景品抽選会</h3>
-                            <p className="text-xl font-bold mt-2">NINTENDO SWITCH ほか 多数！</p>
-                        </div>
+                    <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12">
+                        {[
+                            { name: "Switch2", icon: Gamepad2, rotate: "rotate-[-3deg]" },
+                            { name: "Refa", icon: Wind, rotate: "rotate-[2deg]" },
+                            { name: "Yogibo", icon: Armchair, rotate: "rotate-[-2deg]" },
+                            { name: "焼肉安福食事券", icon: UtensilsCrossed, rotate: "rotate-[3deg]" },
+                            { name: "国産米", icon: Wheat, rotate: "rotate-[-1deg]" }
+                        ].map((item, idx) => (
+                            <div key={idx} className={`flex flex-col items-center gap-4 ${item.rotate} animate-float`} style={{ animationDelay: `${idx * 0.5}s` }}>
+                                <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform">
+                                    <item.icon size={64} className="text-black" />
+                                </div>
+                                <div className="bg-white border-4 border-black px-6 py-2 rounded-full font-black text-lg shadow-[4px_4px_0px_#000]">
+                                    {item.name}
+                                </div>
+                            </div>
+                        ))}
                     </div>
 
                 </div>

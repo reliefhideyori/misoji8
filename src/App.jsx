@@ -121,7 +121,7 @@ const App = () => {
             </div>
 
             {/* Hero Section */}
-            <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-20 px-4">
+            <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-12 px-4">
                 <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
                 <div className="z-10 text-center relative w-full max-w-6xl flex flex-col items-center">
@@ -137,7 +137,7 @@ const App = () => {
                         />
                     </h1>
 
-                    <div className="bg-white border-4 border-black p-4 md:p-6 rounded-[30px] shadow-[8px_8px_0px_#000] rotate-[1deg] inline-block mb-10">
+                    <div className="bg-white border-4 border-black p-4 md:p-6 rounded-[30px] shadow-[8px_8px_0px_#000] inline-block mb-6">
                         <div className="text-center mb-2 font-black">
                             <p className="text-2xl mb-1">2026.3.22 (SUN)</p>
                             <p className="text-sm text-gray-600">開催まで...</p>
@@ -174,7 +174,7 @@ const App = () => {
 
 
             {/* Guest Section */}
-            <section className="py-24 px-4 max-w-6xl mx-auto relative z-10">
+            <section className="pt-12 pb-24 px-4 max-w-6xl mx-auto relative z-10">
                 <div className="bg-white border-8 border-black p-8 md:p-16 rounded-[60px] shadow-[20px_20px_0px_#FF00FF]">
                     <h2 className="text-5xl md:text-7xl font-black italic mb-12 flex items-center gap-4">
                         <Sparkles className="text-pink-500" /> GUESTS
@@ -230,23 +230,16 @@ const App = () => {
                 </div>
 
                 <div className={`mt-24 transition-all duration-1000 ${typedMessage.length >= fullMessage.length ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div className="flex justify-center">
                         <a
                             href="https://www.instagram.com/_tajimi_misoji/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center gap-4 bg-[#FFF500] border-4 border-black text-black px-12 py-6 rounded-full font-black text-2xl hover:scale-110 transition-all shadow-[10px_10px_0px_#000]"
+                            className="group flex items-center justify-center gap-4 bg-[#FFF500] border-4 border-black text-black px-12 py-6 rounded-full font-black text-2xl hover:scale-110 transition-all shadow-[10px_10px_0px_#000]"
                         >
-                            <Instagram size={32} />
+                            <Instagram size={32} className="relative -left-1" />
                             Follow on Instagram
                         </a>
-                        <div className="bg-white border-4 border-black p-4 rounded-2xl shadow-[8px_8px_0px_#000]">
-                            <img
-                                src="/instagram-qr.png"
-                                alt="Instagram QR Code"
-                                className="w-48 h-auto"
-                            />
-                        </div>
                     </div>
                 </div>
             </section>

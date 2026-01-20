@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Instagram, MapPin, Calendar, Gift, Users, Heart, ChevronDown, Star, Sparkles, Megaphone } from 'lucide-react';
+import { Instagram, MapPin, Calendar, Gift, Users, Heart, ChevronDown, Star, Sparkles, Megaphone, Clock, DoorOpen, Ticket, Mic, Music, Trophy, Flag, Gamepad2, Wind, Armchair, UtensilsCrossed, Wheat } from 'lucide-react';
 
 const App = () => {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -228,19 +228,152 @@ const App = () => {
                 </div>
             </section>
 
-            {/* Prizes Section */}
-            <section className="py-24 px-4 overflow-hidden">
-                <div className="max-w-4xl mx-auto text-center">
-                    <div className="animate-float inline-block">
-                        <div className="bg-cyan-400 border-4 border-black p-8 rounded-full shadow-[10px_10px_0px_#000] rotate-[-5deg]">
-                            <Gift size={64} className="mx-auto mb-4" />
-                            <h3 className="text-4xl font-black italic">豪華景品抽選会</h3>
-                            <p className="text-xl font-bold mt-2">NINTENDO SWITCH ほか 多数！</p>
+            {/* Time Table & Prizes Section */}
+            <section className="py-24 px-4 max-w-6xl mx-auto relative z-10">
+
+                {/* Time Table */}
+                <div className="mb-32">
+                    <div className="text-center mb-16">
+                        <h2 className="text-6xl md:text-8xl font-black text-[#FF00FF] tracking-tighter drop-shadow-[4px_4px_0px_#000]" style={{ WebkitTextStroke: '2px black' }}>TIME TABLE</h2>
+                    </div>
+
+                    <div className="relative grid md:grid-cols-2 gap-x-12 gap-y-12 max-w-5xl mx-auto">
+                        {/* Center Line */}
+                        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-2 bg-black -translate-x-1/2 rounded-full"></div>
+
+                        {/* 11:00 Open */}
+                        <div className="md:contents">
+                            <div className="relative md:text-right md:pr-12 md:mb-0 mb-8">
+                                <div className="hidden md:block absolute right-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[50%]"></div>
+                                <div className="flex flex-col md:items-end items-center gap-4">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[-2deg]">
+                                        11:00
+                                    </div>
+                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[280px]">
+                                        <span className="font-black text-2xl">開場</span>
+                                        <DoorOpen size={32} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="md:col-start-2"></div>
+                        </div>
+
+                        {/* 13:00 Ticket Distribution */}
+                        <div className="md:contents">
+                            <div className="md:col-start-1"></div>
+                            <div className="relative md:pl-12 md:mb-0 mb-8">
+                                <div className="hidden md:block absolute left-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[-50%]"></div>
+                                <div className="flex flex-col md:items-start items-center gap-4">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[2deg]">
+                                        13:00
+                                    </div>
+                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[320px]">
+                                        <span className="font-black text-2xl">抽選券配布開始</span>
+                                        <Ticket size={32} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* 13:45 Mayor Greeting */}
+                        <div className="md:contents">
+                            <div className="relative md:text-right md:pr-12 md:mb-0 mb-8">
+                                <div className="hidden md:block absolute right-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[50%]"></div>
+                                <div className="flex flex-col md:items-end items-center gap-4">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[-2deg]">
+                                        13:45
+                                    </div>
+                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[300px]">
+                                        <span className="font-black text-2xl">多治見市長挨拶</span>
+                                        <Mic size={32} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="md:col-start-2"></div>
+                        </div>
+
+                        {/* 14:00 Live Performance */}
+                        <div className="md:contents">
+                            <div className="md:col-start-1"></div>
+                            <div className="relative md:pl-12 md:mb-0 mb-8">
+                                <div className="hidden md:block absolute left-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[-50%]"></div>
+                                <div className="flex flex-col md:items-start items-center gap-4">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[2deg]">
+                                        14:00
+                                    </div>
+                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[320px]">
+                                        <span className="font-black text-2xl">ライブパフォーマンス</span>
+                                        <Music size={32} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* 15:00 Lottery Results */}
+                        <div className="md:contents">
+                            <div className="relative md:text-right md:pr-12 md:mb-0 mb-8">
+                                <div className="hidden md:block absolute right-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[50%]"></div>
+                                <div className="flex flex-col md:items-end items-center gap-4">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[-2deg]">
+                                        15:00
+                                    </div>
+                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[280px]">
+                                        <span className="font-black text-2xl">抽選結果発表</span>
+                                        <Trophy size={32} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="md:col-start-2"></div>
+                        </div>
+
+                        {/* 16:00 Close */}
+                        <div className="md:contents">
+                            <div className="md:col-start-1"></div>
+                            <div className="relative md:pl-12">
+                                <div className="hidden md:block absolute left-[-6px] top-8 w-6 h-6 bg-[#FF00FF] border-4 border-black rounded-full z-10 translate-x-[-50%]"></div>
+                                <div className="flex flex-col md:items-start items-center gap-4">
+                                    <div className="bg-[#FF00FF] border-4 border-black text-white font-black text-5xl px-8 py-2 rounded-full shadow-[6px_6px_0px_#000] rotate-[2deg]">
+                                        16:00
+                                    </div>
+                                    <div className="bg-white border-4 border-black px-8 py-4 rounded-full flex items-center justify-between gap-4 shadow-[8px_8px_0px_#000] min-w-[200px] md:min-w-[250px]">
+                                        <span className="font-black text-2xl">クローズ</span>
+                                        <Flag size={32} />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="mt-12 text-2xl font-black flex justify-center gap-8">
-                        <div className="bg-white border-4 border-black p-4 rotate-2">入場無料</div>
-                        <div className="bg-pink-500 text-white border-4 border-black p-4 rotate-[-3deg]">誰でも入場可能</div>
+                </div>
+
+                {/* Raffle Prizes */}
+                <div className="text-center">
+                    <div className="mb-12">
+                        <h2 className="text-5xl md:text-7xl font-black text-[#FF00FF] tracking-tighter drop-shadow-[4px_4px_0px_#000] mb-2" style={{ WebkitTextStroke: '2px black' }}>抽選会景品</h2>
+                        <p className="font-bold text-lg text-black">※画像はイメージです</p>
+                    </div>
+
+                    <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+                        {[
+                            { name: "Switch2", icon: Gamepad2, rotate: "rotate-[-3deg]" },
+                            { name: "Refa", icon: Wind, rotate: "rotate-[2deg]" },
+                            { name: "Yogibo", icon: Armchair, rotate: "rotate-[-2deg]" },
+                            { name: "焼肉安福食事券", icon: UtensilsCrossed, rotate: "rotate-[3deg]" },
+                            { name: "国産米", icon: Wheat, rotate: "rotate-[-1deg]" }
+                        ].map((item, idx) => (
+                            <div key={idx} className={`flex flex-col items-center gap-4 ${item.rotate} animate-float`} style={{ animationDelay: `${idx * 0.5}s` }}>
+                                <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform">
+                                    <item.icon size={64} className="text-black" />
+                                </div>
+                                <div className="bg-white border-4 border-black px-6 py-2 rounded-full font-black text-lg shadow-[4px_4px_0px_#000]">
+                                    {item.name}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="mt-20 text-2xl font-black flex flex-wrap justify-center gap-8">
+                        <div className="bg-white border-4 border-black p-4 rotate-2 shadow-[8px_8px_0px_#000]">入場無料</div>
+                        <div className="bg-pink-500 text-white border-4 border-black p-4 rotate-[-3deg] shadow-[8px_8px_0px_#000]">誰でも入場可能</div>
                     </div>
                 </div>
             </section>

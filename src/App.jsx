@@ -129,9 +129,12 @@ const App = () => {
                         ENTRY FREE / NO BORDER
                     </div>
 
-                    <h1 className="text-4xl md:text-7xl lg:text-8xl font-black italic tracking-tighter leading-tight mb-8">
-                        <span className="block text-black drop-shadow-[4px_4px_0px_#fff] mb-2">令和８年</span>
-                        <span className="block text-pink-600 y2k-shadow transform scale-110 md:scale-125 origin-center my-4">多治見市三十路式</span>
+                    <h1 className="mb-8">
+                        <img
+                            src="/src/assets/logo.png"
+                            alt="令和８年 多治見市三十路式"
+                            className="w-full max-w-2xl mx-auto drop-shadow-[8px_8px_0px_#000]"
+                        />
                     </h1>
 
                     <div className="bg-white border-4 border-black p-4 md:p-6 rounded-[30px] shadow-[8px_8px_0px_#000] rotate-[1deg] inline-block mb-10">

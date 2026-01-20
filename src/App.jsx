@@ -82,7 +82,6 @@ const App = () => {
         }
         .animate-slow-pulse {
           animation: slow-pulse 4s ease-in-out infinite;
-          transition: all 0.3s ease-out;
         }
         .text-outline {
           -webkit-text-stroke: 2px black;

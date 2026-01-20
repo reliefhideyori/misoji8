@@ -11,30 +11,12 @@
 
 ## 開発環境のセットアップ
 
-### 1. 依存関係のインストール
+### 依存関係のインストール
 ```bash
 npm install
 ```
 
-### 2. 環境変数の設定
-`.env.example`をコピーして`.env`ファイルを作成し、Gemini APIキーを設定してください。
-
-```bash
-# .envファイルを作成
-cp .env.example .env
-```
-
-`.env`ファイルを編集:
-```
-VITE_GEMINI_API_KEY=your_actual_api_key_here
-```
-
-**APIキーの取得方法:**
-1. [Google AI Studio](https://aistudio.google.com/app/apikey)にアクセス
-2. 「Create API Key」をクリック
-3. 生成されたキーを`.env`ファイルに貼り付け
-
-### 3. 開発サーバーの起動
+### 開発サーバーの起動
 ```bash
 # 開発サーバーの起動
 npm run dev
@@ -50,15 +32,12 @@ npm run preview
 
 このプロジェクトはVercelでホスティングされています。
 
-### Vercelでの環境変数設定
-1. Vercelダッシュボードでプロジェクトを開く
-2. 「Settings」→「Environment Variables」に移動
-3. 以下の環境変数を追加:
-   - **Name**: `VITE_GEMINI_API_KEY`
-   - **Value**: あなたのGemini APIキー
-   - **Environment**: Production, Preview, Development (すべて選択)
-4. 「Save」をクリック
-5. 「Deployments」タブから最新のデプロイを選択し、「Redeploy」をクリック
+1. GitHubリポジトリにコードをプッシュ
+2. Vercelダッシュボードで「Add New Project」を選択
+3. GitHubリポジトリをインポート
+4. 「Deploy」をクリック
+
+デプロイ完了後、自動的に生成されたURLでサイトが公開されます。
 
 ## ライセンス
 

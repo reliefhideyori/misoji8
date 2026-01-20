@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Instagram, MapPin, Calendar, Gift, Users, Heart, ChevronDown, Star, Sparkles, Megaphone, Send, Loader2, MessageSquareHeart } from 'lucide-react';
+import { Instagram, MapPin, Calendar, Gift, Users, Heart, ChevronDown, Star, Sparkles, Megaphone } from 'lucide-react';
 
 const App = () => {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     const [scrollY, setScrollY] = useState(0);
     const [typedMessage, setTypedMessage] = useState("");
     const fullMessage = "30歳。それは、かつての夢を現実に変え、新しい自分に出会う場所。多治見の空の下で、僕らはまた一歩、大人になる。共に祝おう、この特別な節目を。";
-
-    // Gemini API States
-    const [aiInput, setAiInput] = useState("");
-    const [aiResult, setAiResult] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
-    const [errorMsg, setErrorMsg] = useState("");
 
     // Countdown Logic
     useEffect(() => {
@@ -54,53 +48,7 @@ const App = () => {
         }
     }, [scrollY > 2200]);
 
-    // Gemini API Call
-    const generateAICheer = async () => {
-        if (!aiInput.trim()) return;
-        setIsLoading(true);
-        setAiResult("");
-        setErrorMsg("");
 
-        const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-
-        const systemPrompt = "あなたは『多治見市三十路式』の公式AIアンバサダーです。30歳を迎える多治見市民（あるいはゆかりのある人）に向けて、熱く、ポップで、少しノスタルジックなエールを送ってください。ユーザーから今の心境や悩み、期待を受け取り、それに寄り添いながら最後はポジティブに締めくくってください。多治見の地名や名産（タイル、うながっぱ、暑さなど）を適度に混ぜて、親しみやすい平成ポップな口調（だぜ、だよ、！多用）で回答してください。";
-
-        const fetchWithRetry = async (retries = 5, delay = 1000) => {
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: `今の気持ち: ${aiInput}` }] }],
-                        systemInstruction: { parts: [{ text: systemPrompt }] }
-                    })
-                });
-                if (!response.ok) throw new Error('API Error');
-                return await response.json();
-            } catch (err) {
-                if (retries > 0) {
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    return fetchWithRetry(retries - 1, delay * 2);
-                }
-                throw err;
-            }
-        };
-
-        try {
-            const data = await fetchWithRetry();
-            const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-            if (text) {
-                setAiResult(text);
-            } else {
-                setErrorMsg("エールの生成に失敗しました。もう一度試してみて！");
-            }
-        } catch (err) {
-            setErrorMsg("通信エラーが発生しました。時間を置いて試してね。");
-        } finally {
-            setIsLoading(false);
-        }
-    };
 
     const guests = [
         { name: "呂布カルマ", sub: "SPECIAL GUEST", color: "bg-pink-500" },
@@ -211,58 +159,7 @@ const App = () => {
                 </div>
             </section>
 
-            {/* AI Message Section ✨ */}
-            <section className="py-24 px-4 bg-white/40 border-y-8 border-black">
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-black text-white p-8 md:p-12 rounded-[50px] shadow-[15px_15px_0px_#FFF500] border-4 border-white relative overflow-hidden">
-                        <div className="absolute top-0 right-0 p-4 opacity-20">
-                            <Sparkles size={80} />
-                        </div>
 
-                        <h2 className="text-3xl md:text-5xl font-black italic mb-6 flex items-center gap-3">
-                            ✨ 三十路へのエール生成
-                        </h2>
-                        <p className="text-lg font-bold mb-8 text-pink-400">
-                            今の気持ち、不安、将来への期待…AIが多治見の魂を込めてメッセージを贈ります！
-                        </p>
-
-                        <div className="flex flex-col gap-4">
-                            <div className="relative">
-                                <textarea
-                                    className="w-full bg-slate-900 border-4 border-pink-500 rounded-3xl p-6 text-white text-lg font-bold focus:outline-none focus:ring-4 focus:ring-pink-500/50 min-h-[150px]"
-                                    placeholder="例：30代になるのが少し不安だけど、新しいことにも挑戦したい！"
-                                    value={aiInput}
-                                    onChange={(e) => setAiInput(e.target.value)}
-                                />
-                                <button
-                                    onClick={generateAICheer}
-                                    disabled={isLoading || !aiInput.trim()}
-                                    className="absolute bottom-4 right-4 bg-pink-500 hover:bg-pink-600 disabled:opacity-50 text-white p-4 rounded-full transition-all shadow-lg hover:scale-110 active:scale-95"
-                                >
-                                    {isLoading ? <Loader2 className="animate-spin" size={24} /> : <Send size={24} />}
-                                </button>
-                            </div>
-
-                            {aiResult && (
-                                <div className="mt-8 bg-[#FFF500] text-black border-4 border-white p-8 rounded-3xl animate-in fade-in slide-in-from-bottom-4 duration-500">
-                                    <div className="flex items-center gap-2 mb-4 text-pink-600 font-black italic">
-                                        <MessageSquareHeart size={24} /> TAJIMI AI SAYS:
-                                    </div>
-                                    <p className="text-xl md:text-2xl font-black leading-relaxed whitespace-pre-wrap">
-                                        {aiResult}
-                                    </p>
-                                </div>
-                            )}
-
-                            {errorMsg && (
-                                <div className="mt-4 text-red-400 font-bold text-center">
-                                    {errorMsg}
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* Guest Section */}
             <section className="py-24 px-4 max-w-6xl mx-auto relative z-10">

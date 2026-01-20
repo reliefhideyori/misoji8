@@ -235,6 +235,11 @@ const App = () => {
                 <div className="mb-32">
                     <div className="text-center mb-16">
                         <h2 className="text-6xl md:text-8xl font-black text-[#FF00FF] tracking-tighter drop-shadow-[4px_4px_0px_#000]" style={{ WebkitTextStroke: '2px black' }}>TIME TABLE</h2>
+
+                        <div className="mt-8 text-xl font-black flex flex-wrap justify-center gap-4">
+                            <div className="bg-white border-4 border-black px-6 py-2 shadow-[4px_4px_0px_#000]">入場無料</div>
+                            <div className="bg-pink-500 text-white border-4 border-black px-6 py-2 shadow-[4px_4px_0px_#000]">誰でも入場可能</div>
+                        </div>
                     </div>
 
                     <div className="relative grid md:grid-cols-2 gap-x-12 gap-y-12 max-w-5xl mx-auto">
@@ -371,10 +376,6 @@ const App = () => {
                         ))}
                     </div>
 
-                    <div className="mt-20 text-2xl font-black flex flex-wrap justify-center gap-8">
-                        <div className="bg-white border-4 border-black p-4 rotate-2 shadow-[8px_8px_0px_#000]">入場無料</div>
-                        <div className="bg-pink-500 text-white border-4 border-black p-4 rotate-[-3deg] shadow-[8px_8px_0px_#000]">誰でも入場可能</div>
-                    </div>
                 </div>
             </section>
 

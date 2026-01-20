@@ -1,6 +1,43 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Instagram, MapPin, Calendar, Gift, Users, Heart, ChevronDown, Star, Sparkles, Megaphone, Clock, DoorOpen, Ticket, Mic, Music, Trophy, Flag, Gamepad2, Wind, Armchair, UtensilsCrossed, Wheat } from 'lucide-react';
 
+const DryerIcon = ({ size = 24, className = "" }) => (
+    <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+    >
+        <path d="M20 12h-6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2Z" />
+        <path d="M13 5h-2a4 4 0 0 0-4 4v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-5a4 4 0 0 0 0-4Z" />
+        <path d="M10 15v5a2 2 0 0 0 2 2h2" />
+        <path d="M2 9h3" />
+        <path d="M2 13h3" />
+    </svg>
+);
+
+const YogiboIcon = ({ size = 24, className = "" }) => (
+    <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+    >
+        <path d="M12 21c-4.97 0-9-4.03-9-9 0-3.5 2.5-6.5 6-8 3 0 6 2.5 8 6 1.5 2.5.5 6-1 7l-2 3c-1 1-2 1-2 1Z" />
+        <path d="M9 10a4 4 0 0 1 6 4" />
+    </svg>
+);
+
 const App = () => {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     const [scrollY, setScrollY] = useState(0);
@@ -364,14 +401,14 @@ const App = () => {
                     <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12">
                         {[
                             { name: "Switch2", icon: Gamepad2, rotate: "rotate-[-3deg]" },
-                            { name: "Refa", icon: Wind, rotate: "rotate-[2deg]" },
-                            { name: "Yogibo", icon: Armchair, rotate: "rotate-[-2deg]" },
+                            { name: "Refa", icon: DryerIcon, rotate: "rotate-[2deg]" },
+                            { name: "Yogibo", icon: YogiboIcon, rotate: "rotate-[-2deg]" },
                             { name: "焼肉安福食事券", icon: UtensilsCrossed, rotate: "rotate-[3deg]" },
                             { name: "国産米", icon: Wheat, rotate: "rotate-[-1deg]" }
                         ].map((item, idx) => (
                             <div key={idx} className={`flex flex-col items-center gap-4 ${item.rotate} animate-float`} style={{ animationDelay: `${idx * 0.5}s` }}>
                                 <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform">
-                                    <item.icon size={64} className="text-black" />
+                                    <item.icon size={64} className="text-black" strokeWidth={2.5} />
                                 </div>
                                 <div className="bg-white border-4 border-black px-6 py-2 rounded-full font-black text-lg shadow-[4px_4px_0px_#000]">
                                     {item.name}

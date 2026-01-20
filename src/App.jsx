@@ -215,7 +215,7 @@ const App = () => {
 
                 <div className={`mt-24 transition-all duration-1000 ${typedMessage.length >= fullMessage.length ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <a
-                        href="https://www.instagram.com/"
+                        href="https://www.instagram.com/_tajimi_misoji/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center gap-4 bg-[#FFF500] border-4 border-black text-black px-12 py-6 rounded-full font-black text-2xl hover:scale-110 transition-all shadow-[10px_10px_0px_#000]"
@@ -242,9 +242,14 @@ const App = () => {
                         <div className="text-right">
                             <p className="font-black text-sm mb-4">© 2026 TAJIMI MISOJI SHIKI</p>
                             <div className="flex gap-4">
-                                <div className="w-16 h-16 bg-white border-4 border-black flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all cursor-pointer shadow-[4px_4px_0px_#000]">
+                                <a
+                                    href="https://www.instagram.com/_tajimi_misoji/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-16 h-16 bg-white border-4 border-black flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all cursor-pointer shadow-[4px_4px_0px_#000]"
+                                >
                                     <Instagram size={32} />
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>

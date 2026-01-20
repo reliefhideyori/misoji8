@@ -138,6 +138,10 @@ const App = () => {
                     </h1>
 
                     <div className="bg-white border-4 border-black p-4 md:p-6 rounded-[30px] shadow-[8px_8px_0px_#000] rotate-[1deg] inline-block mb-10">
+                        <div className="text-center mb-2 font-black">
+                            <p className="text-2xl mb-1">2026.3.22 (SUN)</p>
+                            <p className="text-sm text-gray-600">開催まで...</p>
+                        </div>
                         <div className="flex gap-4 md:gap-6 justify-center">
                             {[
                                 { label: 'DAYS', value: timeLeft.days },
@@ -154,9 +158,7 @@ const App = () => {
                     </div>
 
                     <div className="flex flex-wrap justify-center gap-4 mt-4 mb-8">
-                        <div className="bg-black text-white px-6 py-3 rounded-full font-black text-lg flex items-center gap-2 shadow-lg">
-                            <Calendar size={20} /> 2026.3.22 (SUN)
-                        </div>
+                        {/* Date moved to above countdown */}
                         <div className="bg-white border-4 border-black px-6 py-3 rounded-full font-black text-lg flex items-center gap-2 shadow-lg">
                             <MapPin className="text-pink-500" size={20} /> 虎渓用水広場
                         </div>
@@ -178,7 +180,7 @@ const App = () => {
                         <Sparkles className="text-pink-500" /> GUESTS
                     </h2>
 
-                    <div className="grid md:grid-cols-2 gap-12">
+                    <div className="grid grid-cols-2 gap-4 md:gap-12">
                         {guests.map((guest, idx) => (
                             <div key={idx} className="relative group">
                                 <div className="absolute inset-0 bg-black rounded-3xl translate-x-3 translate-y-3" />

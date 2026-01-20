@@ -205,15 +205,17 @@ const App = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                         {guests.map((guest, idx) => (
-                            <div key={idx} className="relative group cursor-pointer">
+                            <div key={idx} className="relative group cursor-pointer h-full">
                                 <a href={guest.url} target="_blank" rel="noopener noreferrer" className="block h-full">
                                     <div className="absolute inset-0 bg-black rounded-3xl translate-x-3 translate-y-3" />
-                                    <div className={`relative ${guest.color} border-4 border-black rounded-3xl p-8 hover:-translate-y-2 transition-transform h-full`}>
-                                        <p className="text-white font-black text-sm tracking-widest mb-2">{guest.sub}</p>
-                                        <h3 className="text-4xl md:text-6xl font-black italic text-white leading-tight drop-shadow-lg">
-                                            {guest.name}
-                                        </h3>
-                                        <div className="mt-8 aspect-square bg-white/20 rounded-2xl border-4 border-black flex items-center justify-center overflow-hidden">
+                                    <div className={`relative ${guest.color} border-4 border-black rounded-3xl p-8 hover:-translate-y-2 transition-transform h-full flex flex-col`}>
+                                        <div>
+                                            <p className="text-white font-black text-sm tracking-widest mb-2">{guest.sub}</p>
+                                            <h3 className={`${guest.name.length > 10 ? 'text-3xl md:text-5xl' : 'text-4xl md:text-6xl'} font-black italic text-white leading-tight drop-shadow-lg`}>
+                                                {guest.name}
+                                            </h3>
+                                        </div>
+                                        <div className="mt-auto pt-8 aspect-square bg-white/20 rounded-2xl border-4 border-black flex items-center justify-center overflow-hidden">
                                             <img
                                                 src={guest.image}
                                                 alt={guest.name}

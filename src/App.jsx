@@ -125,11 +125,11 @@ const App = () => {
                 <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
                 <div className="z-10 text-center relative w-full max-w-6xl flex flex-col items-center">
-                    <div className="inline-block bg-black text-white font-black text-lg px-6 py-2 rotate-[-1deg] mb-3 shadow-[4px_4px_0px_#FF00FF]">
+                    <div className="inline-block bg-black text-white font-black text-lg px-6 py-2 rotate-[-1deg] mb-1 shadow-[4px_4px_0px_#FF00FF]">
                         ENTRY FREE / NO BORDER
                     </div>
 
-                    <h1 className="mb-4">
+                    <h1 className="mb-2">
                         <img
                             src="/logo.png"
                             alt="令和８年 多治見市三十路式"

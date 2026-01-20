@@ -165,16 +165,18 @@ const App = () => {
                             <p className="text-3xl md:text-5xl mb-2">2026.3.22 <span className="text-pink-500">(SUN)</span></p>
                             <p className="text-sm md:text-base text-gray-600">開催まで...</p>
                         </div>
-                        <div className="flex gap-4 md:gap-6 justify-center">
+                        <div className="flex gap-8 md:gap-12 justify-center items-end">
                             {[
                                 { label: 'DAYS', value: timeLeft.days },
-                                { label: 'HRS', value: timeLeft.hours },
-                                { label: 'MINS', value: timeLeft.minutes },
-                                { label: 'SECS', value: timeLeft.seconds }
+                                { label: 'HOURS', value: timeLeft.hours },
+                                { label: 'MINUTES', value: timeLeft.minutes },
+                                { label: 'SECONDS', value: timeLeft.seconds }
                             ].map((item, idx) => (
-                                <div key={idx} className="text-center min-w-[60px]">
-                                    <div className="text-3xl md:text-5xl font-black leading-none">{String(item.value).padStart(2, '0')}</div>
-                                    <div className="text-[10px] font-bold mt-1 opacity-60">{item.label}</div>
+                                <div key={idx} className="flex flex-col items-center">
+                                    <div className="text-5xl md:text-7xl font-black font-mono leading-none tracking-tighter mb-1">
+                                        {String(item.value).padStart(2, '0')}
+                                    </div>
+                                    <div className="text-xs md:text-sm font-bold tracking-widest text-gray-500">{item.label}</div>
                                 </div>
                             ))}
                         </div>

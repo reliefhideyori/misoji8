@@ -51,8 +51,8 @@ const App = () => {
 
 
     const guests = [
-        { name: "呂布カルマ", sub: "SPECIAL GUEST", color: "bg-pink-500" },
-        { name: "Legal nerd boyz", sub: "シラフ / TOKYO 世界 / SKINNY YMT", color: "bg-cyan-500" }
+        { name: "呂布カルマ", sub: "SPECIAL GUEST", color: "bg-pink-500", image: "/ryoff-karma.png" },
+        { name: "Legal nerd boyz", sub: "シラフ / TOKYO 世界 / SKINNY YMT", color: "bg-cyan-500", image: "/legal-nerd-boyz.png" }
     ];
 
     return (
@@ -188,7 +188,11 @@ const App = () => {
                                         {guest.name}
                                     </h3>
                                     <div className="mt-8 aspect-square bg-white/20 rounded-2xl border-4 border-black flex items-center justify-center overflow-hidden">
-                                        <span className="text-white font-black text-2xl rotate-12">PHOTO AREA</span>
+                                        <img
+                                            src={guest.image}
+                                            alt={guest.name}
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -224,15 +228,24 @@ const App = () => {
                 </div>
 
                 <div className={`mt-24 transition-all duration-1000 ${typedMessage.length >= fullMessage.length ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <a
-                        href="https://www.instagram.com/_tajimi_misoji/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center gap-4 bg-[#FFF500] border-4 border-black text-black px-12 py-6 rounded-full font-black text-2xl hover:scale-110 transition-all shadow-[10px_10px_0px_#000]"
-                    >
-                        <Instagram size={32} />
-                        Follow on Instagram
-                    </a>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <a
+                            href="https://www.instagram.com/_tajimi_misoji/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center gap-4 bg-[#FFF500] border-4 border-black text-black px-12 py-6 rounded-full font-black text-2xl hover:scale-110 transition-all shadow-[10px_10px_0px_#000]"
+                        >
+                            <Instagram size={32} />
+                            Follow on Instagram
+                        </a>
+                        <div className="bg-white border-4 border-black p-4 rounded-2xl shadow-[8px_8px_0px_#000]">
+                            <img
+                                src="/instagram-qr.png"
+                                alt="Instagram QR Code"
+                                className="w-48 h-auto"
+                            />
+                        </div>
+                    </div>
                 </div>
             </section>
 

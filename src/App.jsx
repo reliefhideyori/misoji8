@@ -1,40 +1,50 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Instagram, MapPin, Calendar, Gift, Users, Heart, ChevronDown, Star, Sparkles, Megaphone, Clock, DoorOpen, Ticket, Mic, Music, Trophy, Flag, Gamepad2, Wind, Armchair, UtensilsCrossed, Wheat } from 'lucide-react';
 
-const DryerIcon = ({ size = 24, className = "" }) => (
-    <svg
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={className}
-    >
-        <path d="M20 12h-6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2Z" />
-        <path d="M13 5h-2a4 4 0 0 0-4 4v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-5a4 4 0 0 0 0-4Z" />
-        <path d="M10 15v5a2 2 0 0 0 2 2h2" />
-        <path d="M2 9h3" />
-        <path d="M2 13h3" />
+// Custom Icons based on user image
+const SwitchIcon = ({ size = 64, className = "" }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+        <rect x="2" y="6" width="20" height="12" rx="4" fill="black" />
+        <path d="M6 12h2" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <path d="M7 11v2" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="17" cy="10" r="1.5" fill="white" />
+        <circle cx="15" cy="12" r="1.5" fill="white" />
+        <circle cx="19" cy="12" r="1.5" fill="white" />
+        <circle cx="17" cy="14" r="1.5" fill="white" />
     </svg>
 );
 
-const YogiboIcon = ({ size = 24, className = "" }) => (
-    <svg
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={className}
-    >
-        <path d="M12 21c-4.97 0-9-4.03-9-9 0-3.5 2.5-6.5 6-8 3 0 6 2.5 8 6 1.5 2.5.5 6-1 7l-2 3c-1 1-2 1-2 1Z" />
-        <path d="M9 10a4 4 0 0 1 6 4" />
+const DryerIcon = ({ size = 64, className = "" }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+        <path d="M3 8C3 6.9 3.9 6 5 6H19C20.1 6 21 6.9 21 8V11C21 13.2 19.2 15 17 15H14L15 22H11L10 15H10C7.2 15 5 12.8 5 10V8H3V8Z" fill="black" />
+        <path d="M5 8V10" stroke="#FF00FF" strokeWidth="2" />
+        <path d="M19 8V9" stroke="#FF00FF" strokeWidth="2" />
+    </svg>
+);
+
+const YogiboIcon = ({ size = 64, className = "" }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+        <path d="M4 14C4 8.5 7.5 4 12.5 4C17.5 4 21 7.5 21 12C21 17.5 16 21 11 21C6 21 4 17 4 14Z" fill="black" />
+        <path d="M8 12C10 14 14 14 16 11" stroke="#FF00FF" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+);
+
+const TicketIcon = ({ size = 64, className = "" }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+        <path fillRule="evenodd" clipRule="evenodd" d="M22 10V6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V10C3.1 10 4 10.9 4 12C4 13.1 3.1 14 2 14V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V14C20.9 14 20 13.1 20 12C20 10.9 20.9 10 22 10Z" fill="black" />
+        <path d="M9 7V17" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <path d="M9 7L7 9" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <path d="M9 7L11 9" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <rect x="14" y="7" width="2" height="10" rx="1" fill="white" />
+        <line x1="12" y1="6" x2="12" y2="18" stroke="white" strokeWidth="1" strokeDasharray="2 2" />
+    </svg>
+);
+
+const RiceIcon = ({ size = 64, className = "" }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+        <path d="M6 5C6 3.9 6.9 3 8 3H16C17.1 3 18 3.9 18 5V19C18 20.1 17.1 21 16 21H8C6.9 21 6 20.1 6 19V5Z" fill="black" />
+        <circle cx="12" cy="12" r="5" fill="white" />
+        <path d="M12 9C12 9 10 11 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 11 12 9 12 9Z" fill="black" />
     </svg>
 );
 
@@ -400,15 +410,15 @@ const App = () => {
 
                     <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12">
                         {[
-                            { name: "Switch2", icon: Gamepad2, rotate: "rotate-[-3deg]" },
+                            { name: "Switch2", icon: SwitchIcon, rotate: "rotate-[-3deg]" },
                             { name: "Refa", icon: DryerIcon, rotate: "rotate-[2deg]" },
                             { name: "Yogibo", icon: YogiboIcon, rotate: "rotate-[-2deg]" },
-                            { name: "焼肉安福食事券", icon: UtensilsCrossed, rotate: "rotate-[3deg]" },
-                            { name: "国産米", icon: Wheat, rotate: "rotate-[-1deg]" }
+                            { name: "焼肉安福食事券", icon: TicketIcon, rotate: "rotate-[3deg]" },
+                            { name: "国産米", icon: RiceIcon, rotate: "rotate-[-1deg]" }
                         ].map((item, idx) => (
                             <div key={idx} className={`flex flex-col items-center gap-4 ${item.rotate} animate-float`} style={{ animationDelay: `${idx * 0.5}s` }}>
                                 <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform">
-                                    <item.icon size={64} className="text-black" strokeWidth={2.5} />
+                                    <item.icon size={80} className="" />
                                 </div>
                                 <div className="bg-white border-4 border-black px-6 py-2 rounded-full font-black text-lg shadow-[4px_4px_0px_#000]">
                                     {item.name}

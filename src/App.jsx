@@ -4,47 +4,49 @@ import { Instagram, MapPin, Calendar, Gift, Users, Heart, ChevronDown, Star, Spa
 // Custom Icons based on user image
 const SwitchIcon = ({ size = 64, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <rect x="2" y="6" width="20" height="12" rx="4" fill="black" />
-        <path d="M6 12h2" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <path d="M7 11v2" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="17" cy="10" r="1.5" fill="white" />
-        <circle cx="15" cy="12" r="1.5" fill="white" />
-        <circle cx="19" cy="12" r="1.5" fill="white" />
-        <circle cx="17" cy="14" r="1.5" fill="white" />
+        <path d="M4 12C4 9 4 8 6 6C7.5 4.5 9 5 12 5C15 5 16.5 4.5 18 6C20 8 20 9 20 12C20 15 19 16.5 17 18C16 19 15 19 14 17C13 16 11 16 10 17C9 19 8 19 7 18C5 16.5 4 15 4 12Z" fill="black" />
+        <path d="M7 9V11" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <path d="M6 10H8" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="17" cy="9" r="1.2" fill="white" />
+        <circle cx="15.5" cy="10.5" r="1.2" fill="white" />
+        <circle cx="18.5" cy="10.5" r="1.2" fill="white" />
+        <circle cx="17" cy="12" r="1.2" fill="white" />
     </svg>
 );
 
 const DryerIcon = ({ size = 64, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <path d="M3 8C3 6.9 3.9 6 5 6H19C20.1 6 21 6.9 21 8V11C21 13.2 19.2 15 17 15H14L15 22H11L10 15H10C7.2 15 5 12.8 5 10V8H3V8Z" fill="black" />
-        <path d="M5 8V10" stroke="#FF00FF" strokeWidth="2" />
-        <path d="M19 8V9" stroke="#FF00FF" strokeWidth="2" />
+        <path d="M19 11L14 11V7C14 5.5 13 4 11 4H6C4 4 3 5 3 7V10C3 12 4 13 6 13L11 13V22H14V13L19 13C20 13 21 12 21 12C21 12 20 11 19 11Z" fill="black" />
+        <path d="M4 7V10" stroke="#FF00FF" strokeWidth="2" />
+        <path d="M11 7V9" stroke="#FF00FF" strokeWidth="2" />
     </svg>
 );
 
 const YogiboIcon = ({ size = 64, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <path d="M4 14C4 8.5 7.5 4 12.5 4C17.5 4 21 7.5 21 12C21 17.5 16 21 11 21C6 21 4 17 4 14Z" fill="black" />
-        <path d="M8 12C10 14 14 14 16 11" stroke="#FF00FF" strokeWidth="2" strokeLinecap="round" />
+        <path d="M5 14C5 9 8 5 13 5C18 5 21 8 21 13C21 17 18 20 13 20C8 20 5 18 5 14Z" fill="black" />
+        <path d="M9 10C11 12 14 12 16 10" stroke="#FF00FF" strokeWidth="2" strokeLinecap="round" />
     </svg>
 );
 
 const TicketIcon = ({ size = 64, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <path fillRule="evenodd" clipRule="evenodd" d="M22 10V6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V10C3.1 10 4 10.9 4 12C4 13.1 3.1 14 2 14V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V14C20.9 14 20 13.1 20 12C20 10.9 20.9 10 22 10Z" fill="black" />
-        <path d="M9 7V17" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <path d="M9 7L7 9" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <path d="M9 7L11 9" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <rect x="14" y="7" width="2" height="10" rx="1" fill="white" />
-        <line x1="12" y1="6" x2="12" y2="18" stroke="white" strokeWidth="1" strokeDasharray="2 2" />
+        <path fillRule="evenodd" clipRule="evenodd" d="M21 10C20.4 10 20 9.6 20 9V7C20 6.4 19.6 6 19 6H5C4.4 6 4 6.4 4 7V9C4 9.6 3.6 10 3 10C2.4 10 2 10.4 2 11V13C2 13.6 2.4 14 3 14C3.6 14 4 14.4 4 15V17C4 17.6 4.4 18 5 18H19C19.6 18 20 17.6 20 17V15C20 14.4 20.4 14 21 14C21.6 14 22 13.6 22 13V11C22 10.4 21.6 10 21 10Z" fill="black" />
+        <path d="M9 8V16" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <path d="M9 8L7 10" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <path d="M9 8L11 10" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <rect x="14" y="8" width="2" height="8" rx="1" fill="white" />
+        <line x1="12.5" y1="7" x2="12.5" y2="17" stroke="white" strokeWidth="1" strokeDasharray="2 2" />
     </svg>
 );
 
 const RiceIcon = ({ size = 64, className = "" }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <path d="M6 5C6 3.9 6.9 3 8 3H16C17.1 3 18 3.9 18 5V19C18 20.1 17.1 21 16 21H8C6.9 21 6 20.1 6 19V5Z" fill="black" />
+        <path d="M7 6C7 4 8 3 9 3H15C16 3 17 4 17 6V18C17 20 16 21 15 21H9C8 21 7 20 7 18V6Z" fill="black" />
+        <path d="M6 6L7 8" stroke="black" strokeWidth="2" strokeLinecap="round" />
+        <path d="M18 6L17 8" stroke="black" strokeWidth="2" strokeLinecap="round" />
         <circle cx="12" cy="12" r="5" fill="white" />
-        <path d="M12 9C12 9 10 11 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 11 12 9 12 9Z" fill="black" />
+        <path d="M12 9C12 9 10 11 10 12.5C10 13.6 10.9 14.5 12 14.5C13.1 14.5 14 13.6 14 12.5C14 11 12 9 12 9Z" fill="black" />
     </svg>
 );
 

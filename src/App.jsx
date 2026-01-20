@@ -131,7 +131,7 @@ const App = () => {
 
                     <h1 className="mb-8">
                         <img
-                            src="/src/assets/logo.png"
+                            src="/logo.png"
                             alt="令和８年 多治見市三十路式"
                             className="w-full max-w-2xl mx-auto drop-shadow-[8px_8px_0px_#000]"
                         />

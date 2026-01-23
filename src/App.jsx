@@ -297,7 +297,7 @@ const App = () => {
 
                     <div className="relative grid md:grid-cols-2 gap-x-12 gap-y-0 max-w-5xl mx-auto">
                         {/* Center Line */}
-                        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-2 bg-black -translate-x-1/2 rounded-full"></div>
+                        <div className="absolute left-1/2 top-0 bottom-0 w-2 bg-black -translate-x-1/2 rounded-full"></div>
 
                         {/* 11:00 Open */}
                         <div className="md:contents">

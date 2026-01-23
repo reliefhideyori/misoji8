@@ -1,54 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Instagram, MapPin, Calendar, Gift, Users, Heart, ChevronDown, Star, Sparkles, Megaphone, Clock, DoorOpen, Ticket, Mic, Music, Trophy, Flag, Gamepad2, Wind, Armchair, UtensilsCrossed, Wheat } from 'lucide-react';
 
-// Custom Icons based on user image
-const SwitchIcon = ({ size = 64, className = "" }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <path d="M4 12C4 9 4 8 6 6C7.5 4.5 9 5 12 5C15 5 16.5 4.5 18 6C20 8 20 9 20 12C20 15 19 16.5 17 18C16 19 15 19 14 17C13 16 11 16 10 17C9 19 8 19 7 18C5 16.5 4 15 4 12Z" fill="black" />
-        <path d="M7 9V11" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <path d="M6 10H8" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="17" cy="9" r="1.2" fill="white" />
-        <circle cx="15.5" cy="10.5" r="1.2" fill="white" />
-        <circle cx="18.5" cy="10.5" r="1.2" fill="white" />
-        <circle cx="17" cy="12" r="1.2" fill="white" />
-    </svg>
-);
+import switchImage from './assets/抽選会景品_Switch2.png';
+import refaImage from './assets/抽選会景品_Refaドライヤー.png';
+import yogiboImage from './assets/抽選会景品_Yogibo.png';
+import ticketImage from './assets/抽選会景品_焼肉安福食事券.png';
+import riceImage from './assets/抽選会景品_国産米.png';
 
-const DryerIcon = ({ size = 64, className = "" }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <path d="M19 11L14 11V7C14 5.5 13 4 11 4H6C4 4 3 5 3 7V10C3 12 4 13 6 13L11 13V22H14V13L19 13C20 13 21 12 21 12C21 12 20 11 19 11Z" fill="black" />
-        <path d="M4 7V10" stroke="#FF00FF" strokeWidth="2" />
-        <path d="M11 7V9" stroke="#FF00FF" strokeWidth="2" />
-    </svg>
-);
-
-const YogiboIcon = ({ size = 64, className = "" }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <path d="M5 14C5 9 8 5 13 5C18 5 21 8 21 13C21 17 18 20 13 20C8 20 5 18 5 14Z" fill="black" />
-        <path d="M9 10C11 12 14 12 16 10" stroke="#FF00FF" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-);
-
-const TicketIcon = ({ size = 64, className = "" }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <path fillRule="evenodd" clipRule="evenodd" d="M21 10C20.4 10 20 9.6 20 9V7C20 6.4 19.6 6 19 6H5C4.4 6 4 6.4 4 7V9C4 9.6 3.6 10 3 10C2.4 10 2 10.4 2 11V13C2 13.6 2.4 14 3 14C3.6 14 4 14.4 4 15V17C4 17.6 4.4 18 5 18H19C19.6 18 20 17.6 20 17V15C20 14.4 20.4 14 21 14C21.6 14 22 13.6 22 13V11C22 10.4 21.6 10 21 10Z" fill="black" />
-        <path d="M9 8V16" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <path d="M9 8L7 10" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <path d="M9 8L11 10" stroke="white" strokeWidth="2" strokeLinecap="round" />
-        <rect x="14" y="8" width="2" height="8" rx="1" fill="white" />
-        <line x1="12.5" y1="7" x2="12.5" y2="17" stroke="white" strokeWidth="1" strokeDasharray="2 2" />
-    </svg>
-);
-
-const RiceIcon = ({ size = 64, className = "" }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-        <path d="M7 6C7 4 8 3 9 3H15C16 3 17 4 17 6V18C17 20 16 21 15 21H9C8 21 7 20 7 18V6Z" fill="black" />
-        <path d="M6 6L7 8" stroke="black" strokeWidth="2" strokeLinecap="round" />
-        <path d="M18 6L17 8" stroke="black" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="12" cy="12" r="5" fill="white" />
-        <path d="M12 9C12 9 10 11 10 12.5C10 13.6 10.9 14.5 12 14.5C13.1 14.5 14 13.6 14 12.5C14 11 12 9 12 9Z" fill="black" />
-    </svg>
-);
+// Custom Icons removed as they are replaced by images
 
 const App = () => {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -412,15 +371,15 @@ const App = () => {
 
                     <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12">
                         {[
-                            { name: "Switch2", icon: SwitchIcon, rotate: "rotate-[-3deg]" },
-                            { name: "Refa", icon: DryerIcon, rotate: "rotate-[2deg]" },
-                            { name: "Yogibo", icon: YogiboIcon, rotate: "rotate-[-2deg]" },
-                            { name: "焼肉安福食事券", icon: TicketIcon, rotate: "rotate-[3deg]" },
-                            { name: "国産米", icon: RiceIcon, rotate: "rotate-[-1deg]" }
+                            { name: "Switch2", image: switchImage, rotate: "rotate-[-3deg]" },
+                            { name: "Refa", image: refaImage, rotate: "rotate-[2deg]" },
+                            { name: "Yogibo", image: yogiboImage, rotate: "rotate-[-2deg]" },
+                            { name: "焼肉安福食事券", image: ticketImage, rotate: "rotate-[3deg]" },
+                            { name: "国産米", image: riceImage, rotate: "rotate-[-1deg]" }
                         ].map((item, idx) => (
                             <div key={idx} className={`flex flex-col items-center gap-4 ${item.rotate} animate-float`} style={{ animationDelay: `${idx * 0.5}s` }}>
-                                <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform">
-                                    <item.icon size={80} className="" />
+                                <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform overflow-hidden p-4">
+                                    <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                                 </div>
                                 <div className="bg-white border-4 border-black px-6 py-2 rounded-full font-black text-lg shadow-[4px_4px_0px_#000]">
                                     {item.name}

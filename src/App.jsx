@@ -266,11 +266,11 @@ const App = () => {
                                                 {guest.name}
                                             </h3>
                                         </div>
-                                        <div className="mt-auto pt-8 aspect-square bg-white/20 rounded-2xl border-4 border-black flex items-center justify-center overflow-hidden">
+                                        <div className="mt-auto aspect-square bg-white/20 rounded-2xl border-4 border-black flex items-center justify-center overflow-hidden">
                                             <img
                                                 src={guest.image}
                                                 alt={guest.name}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover object-top"
                                             />
                                         </div>
                                     </div>

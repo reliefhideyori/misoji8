@@ -174,7 +174,7 @@ const App = () => {
                         </div>
                         <div className="flex justify-center items-baseline gap-4 mt-2">
                             <p className="text-lg md:text-2xl text-gray-600 font-bold">開催まで...</p>
-                            <div className="text-7xl md:text-9xl font-black leading-none tracking-tighter font-['Mochiy_Pop_One'] text-[#FF00FF] drop-shadow-[2px_2px_0px_#000]">
+                            <div className="text-6xl md:text-8xl font-black leading-none tracking-tighter font-['Mochiy_Pop_One'] text-black">
                                 {timeLeft.days}
                             </div>
                             <div className="text-xl md:text-3xl font-bold">日</div>

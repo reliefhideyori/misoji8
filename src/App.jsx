@@ -15,7 +15,7 @@ const App = () => {
     const [typedMessage, setTypedMessage] = useState("");
     const [startTyping, setStartTyping] = useState(false);
     const messageSectionRef = useRef(null);
-    const fullMessage = "30歳。それは、かつての夢を現実に変え、新しい自分に出会う場所。多治見の空の下で、僕らはまた一歩、大人になる。共に祝おう、この特別な節目を。";
+    const fullMessage = "三十路を、祝おう。今年の三十路式は、あえて『誰でも気軽に来れるイベント』にしました。30歳の節目を、地元の先輩も、後輩も、家族も、県外の人も、みんなで祝って、みんなでワイワイ盛り上がりたい。懐かしい再会も、新しい出会いも。三十路式が多治見の伝統となるように、実行委員一同、全力でお待ちしています。";
 
     // Countdown Logic
     useEffect(() => {
@@ -393,10 +393,15 @@ const App = () => {
 
             {/* Message Section */}
             <section ref={messageSectionRef} className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-32 border-t-8 border-black">
-                <div className="max-w-3xl w-full text-center">
-                    <div className="min-h-[200px] text-3xl md:text-5xl font-black leading-relaxed text-black">
+                <div className="max-w-3xl w-full">
+                    <div className="min-h-[200px] text-xl md:text-3xl font-bold leading-relaxed text-black mb-12 text-justify">
                         {typedMessage}
-                        <span className="inline-block w-2 h-8 md:h-12 bg-pink-500 ml-2 animate-pulse align-middle" />
+                        <span className="inline-block w-2 h-6 md:h-10 bg-pink-500 ml-2 animate-pulse align-middle" />
+                    </div>
+
+                    <div className={`text-right transition-opacity duration-1000 ${typedMessage.length >= fullMessage.length ? 'opacity-100' : 'opacity-0'}`}>
+                        <p className="font-bold text-lg md:text-xl">令和8年 多治見市三十路式実行委員会</p>
+                        <p className="font-black text-2xl md:text-3xl mt-2">委員長　榊原 匠</p>
                     </div>
                 </div>
 

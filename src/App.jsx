@@ -394,9 +394,9 @@ const App = () => {
             {/* Message Section */}
             <section ref={messageSectionRef} className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-32 border-t-8 border-black">
                 <div className="max-w-3xl w-full text-center">
-                    <div className="min-h-[200px] text-3xl md:text-5xl font-black leading-loose text-black">
+                    <div className="min-h-[200px] text-3xl md:text-5xl font-black leading-relaxed text-black">
                         {typedMessage}
-                        <span className="inline-block w-2 h-10 md:h-16 bg-pink-500 ml-2 animate-pulse" />
+                        <span className="inline-block w-2 h-8 md:h-12 bg-pink-500 ml-2 animate-pulse align-middle" />
                     </div>
                 </div>
 

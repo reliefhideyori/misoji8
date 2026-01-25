@@ -401,7 +401,7 @@ const App = () => {
 
                     <div className={`text-right transition-opacity duration-1000 ${typedMessage.length >= fullMessage.length ? 'opacity-100' : 'opacity-0'}`}>
                         <p className="font-bold text-sm md:text-lg">令和8年 多治見市三十路式実行委員会</p>
-                        <p className="font-black text-lg md:text-2xl mt-2">委員長　榊原 匠</p>
+                        <p className="font-bold text-lg md:text-2xl mt-2">委員長　榊原 匠</p>
                     </div>
                 </div>
 

@@ -173,20 +173,11 @@ const App = () => {
                             <p className="text-3xl md:text-5xl mb-2">2026.3.22 <span className="text-pink-500">(SUN)</span></p>
                             <p className="text-lg md:text-xl text-gray-600 font-bold mb-1">開催まで...</p>
                         </div>
-                        <div className="flex gap-8 md:gap-12 justify-center items-end">
-                            {[
-                                { label: 'DAYS', value: timeLeft.days },
-                                { label: 'HOURS', value: timeLeft.hours },
-                                { label: 'MINUTES', value: timeLeft.minutes },
-                                { label: 'SECONDS', value: timeLeft.seconds }
-                            ].map((item, idx) => (
-                                <div key={idx} className="flex flex-col items-center">
-                                    <div className="text-5xl md:text-7xl font-black font-mono leading-none tracking-tighter mb-1">
-                                        {String(item.value).padStart(2, '0')}
-                                    </div>
-                                    <div className="text-xs md:text-sm font-bold tracking-widest text-gray-500">{item.label}</div>
-                                </div>
-                            ))}
+                        <div className="flex justify-center items-baseline gap-2 mt-2">
+                            <div className="text-6xl md:text-8xl font-black font-mono leading-none tracking-tighter">
+                                {timeLeft.days}
+                            </div>
+                            <div className="text-xl md:text-3xl font-bold">日</div>
                         </div>
                     </div>
 
@@ -401,7 +392,7 @@ const App = () => {
 
                     <div className={`text-right transition-opacity duration-1000 ${typedMessage.length >= fullMessage.length ? 'opacity-100' : 'opacity-0'}`}>
                         <p className="font-bold text-sm md:text-lg">令和8年 多治見市三十路式実行委員会</p>
-                        <p className="font-bold text-lg md:text-2xl mt-2">委員長　榊原 匠</p>
+                        <p className="font-bold text-sm md:text-lg mt-1">委員長　榊原 匠</p>
                     </div>
                 </div>
 

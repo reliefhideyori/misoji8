@@ -246,7 +246,7 @@ const App = () => {
                 {/* Time Table */}
                 <div className="mb-32">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-8xl font-black text-[#FF00FF] tracking-tighter drop-shadow-[4px_4px_0px_#000] [-webkit-text-stroke:1px_black] md:[-webkit-text-stroke:2px_black]">TIME TABLE</h2>
+                        <h2 className="text-4xl md:text-8xl font-black text-[#FF00FF] tracking-widest md:tracking-tighter drop-shadow-[4px_4px_0px_#000] [-webkit-text-stroke:1px_black] md:[-webkit-text-stroke:2px_black]">TIME TABLE</h2>
 
                         <div className="mt-8 text-xl font-black flex flex-wrap justify-center gap-4">
                             <div className="bg-white border-4 border-black px-6 py-2 shadow-[4px_4px_0px_#000]">入場無料</div>
@@ -378,7 +378,7 @@ const App = () => {
                             { name: "国産米", image: riceImage, rotate: "rotate-[-1deg]" }
                         ].map((item, idx) => (
                             <div key={idx} className={`flex flex-col items-center gap-4 ${item.rotate} animate-float`} style={{ animationDelay: `${idx * 0.5}s` }}>
-                                <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform overflow-hidden px-2">
+                                <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform overflow-hidden">
                                     <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                                 </div>
                                 <div className="bg-white border-4 border-black px-6 py-2 rounded-full font-black text-lg shadow-[4px_4px_0px_#000]">

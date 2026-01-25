@@ -372,13 +372,13 @@ const App = () => {
                     <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12">
                         {[
                             { name: "Switch2", image: switchImage, rotate: "rotate-[-3deg]" },
-                            { name: "Refa", image: refaImage, rotate: "rotate-[2deg]" },
+                            { name: "Refa", image: refaImage, rotate: "rotate-[2deg]", padding: "p-2" },
                             { name: "Yogibo", image: yogiboImage, rotate: "rotate-[-2deg]" },
                             { name: "焼肉安福食事券", image: ticketImage, rotate: "rotate-[3deg]" },
                             { name: "国産米", image: riceImage, rotate: "rotate-[-1deg]" }
                         ].map((item, idx) => (
                             <div key={idx} className={`flex flex-col items-center gap-4 ${item.rotate} animate-float`} style={{ animationDelay: `${idx * 0.5}s` }}>
-                                <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform overflow-hidden">
+                                <div className={`w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform overflow-hidden ${item.padding || ''}`}>
                                     <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                                 </div>
                                 <div className="bg-white border-4 border-black px-6 py-2 rounded-full font-black text-lg shadow-[4px_4px_0px_#000]">
@@ -393,15 +393,15 @@ const App = () => {
 
             {/* Message Section */}
             <section ref={messageSectionRef} className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-32 border-t-8 border-black">
-                <div className="max-w-3xl w-full">
+                <div className="max-w-4xl w-full">
                     <div className="min-h-[200px] text-xl md:text-3xl font-bold leading-relaxed text-black mb-12 text-justify">
                         {typedMessage}
                         <span className="inline-block w-2 h-6 md:h-10 bg-pink-500 ml-2 animate-pulse align-middle" />
                     </div>
 
                     <div className={`text-right transition-opacity duration-1000 ${typedMessage.length >= fullMessage.length ? 'opacity-100' : 'opacity-0'}`}>
-                        <p className="font-bold text-lg md:text-xl">令和8年 多治見市三十路式実行委員会</p>
-                        <p className="font-black text-2xl md:text-3xl mt-2">委員長　榊原 匠</p>
+                        <p className="font-bold text-sm md:text-lg">令和8年 多治見市三十路式実行委員会</p>
+                        <p className="font-black text-lg md:text-2xl mt-2">委員長　榊原 匠</p>
                     </div>
                 </div>
 

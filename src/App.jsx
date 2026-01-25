@@ -246,7 +246,7 @@ const App = () => {
                 {/* Time Table */}
                 <div className="mb-32">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-8xl font-black text-[#FF00FF] tracking-tighter drop-shadow-[4px_4px_0px_#000]" style={{ WebkitTextStroke: '2px black' }}>TIME TABLE</h2>
+                        <h2 className="text-4xl md:text-8xl font-black text-[#FF00FF] tracking-tighter drop-shadow-[4px_4px_0px_#000] [-webkit-text-stroke:1px_black] md:[-webkit-text-stroke:2px_black]">TIME TABLE</h2>
 
                         <div className="mt-8 text-xl font-black flex flex-wrap justify-center gap-4">
                             <div className="bg-white border-4 border-black px-6 py-2 shadow-[4px_4px_0px_#000]">入場無料</div>
@@ -378,7 +378,7 @@ const App = () => {
                             { name: "国産米", image: riceImage, rotate: "rotate-[-1deg]" }
                         ].map((item, idx) => (
                             <div key={idx} className={`flex flex-col items-center gap-4 ${item.rotate} animate-float`} style={{ animationDelay: `${idx * 0.5}s` }}>
-                                <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform overflow-hidden p-4">
+                                <div className="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-black rounded-full flex items-center justify-center shadow-[8px_8px_0px_#FF00FF] hover:scale-110 transition-transform overflow-hidden px-2">
                                     <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                                 </div>
                                 <div className="bg-white border-4 border-black px-6 py-2 rounded-full font-black text-lg shadow-[4px_4px_0px_#000]">
@@ -420,8 +420,8 @@ const App = () => {
                 <div className="max-w-6xl mx-auto">
                     <div className="mb-12">
                         <h2 className="text-2xl md:text-4xl font-black italic mb-6 whitespace-nowrap">令和８年 多治見市 三十路式</h2>
-                        <div className="space-y-3 font-bold text-lg">
-                            <p className="flex items-center gap-2 text-sm md:text-lg whitespace-nowrap">主催：令和7年度多治見市三十路式実行委員会</p>
+                        <div className="space-y-3 font-bold text-sm md:text-lg">
+                            <p className="flex items-center gap-2 whitespace-nowrap">主催：令和7年度多治見市三十路式実行委員会</p>
                             <p>共催：多治見市</p>
                             <p>お問合せ：多治見市役所 くらし人権課</p>
                             <p className="bg-black text-white inline-block px-2">TEL：0572-22-1134</p>

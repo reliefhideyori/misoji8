@@ -246,7 +246,7 @@ const App = () => {
                 {/* Time Table */}
                 <div className="mb-32">
                     <div className="text-center mb-16">
-                        <h2 className="text-6xl md:text-8xl font-black text-[#FF00FF] tracking-tighter drop-shadow-[4px_4px_0px_#000]" style={{ WebkitTextStroke: '2px black' }}>TIME TABLE</h2>
+                        <h2 className="text-4xl md:text-8xl font-black text-[#FF00FF] tracking-tighter drop-shadow-[4px_4px_0px_#000]" style={{ WebkitTextStroke: '2px black' }}>TIME TABLE</h2>
 
                         <div className="mt-8 text-xl font-black flex flex-wrap justify-center gap-4">
                             <div className="bg-white border-4 border-black px-6 py-2 shadow-[4px_4px_0px_#000]">入場無料</div>
@@ -394,7 +394,7 @@ const App = () => {
             {/* Message Section */}
             <section ref={messageSectionRef} className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-32 border-t-8 border-black">
                 <div className="max-w-3xl w-full text-center">
-                    <div className="min-h-[200px] text-3xl md:text-5xl font-black leading-snug text-black">
+                    <div className="min-h-[200px] text-3xl md:text-5xl font-black leading-loose text-black">
                         {typedMessage}
                         <span className="inline-block w-2 h-10 md:h-16 bg-pink-500 ml-2 animate-pulse" />
                     </div>

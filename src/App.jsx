@@ -171,7 +171,7 @@ const App = () => {
                     <div className="bg-white border-4 border-black p-4 md:p-6 rounded-[30px] shadow-[8px_8px_0px_#000] inline-block mb-6">
                         <div className="text-center mb-4 font-black">
                             <p className="text-3xl md:text-5xl mb-2">2026.3.22 <span className="text-pink-500">(SUN)</span></p>
-                            <p className="text-sm md:text-base text-gray-600">開催まで...</p>
+                            <p className="text-lg md:text-xl text-gray-600 font-bold mb-1">開催まで...</p>
                         </div>
                         <div className="flex gap-8 md:gap-12 justify-center items-end">
                             {[
@@ -406,7 +406,7 @@ const App = () => {
                             href="https://www.instagram.com/_tajimi_misoji/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center justify-center gap-4 bg-[#FFF500] border-4 border-black text-black px-12 py-6 rounded-full font-black text-2xl hover:scale-110 transition-all shadow-[10px_10px_0px_#000]"
+                            className="group flex items-center justify-center gap-4 bg-[#FFF500] border-4 border-black text-black px-8 py-4 md:px-12 md:py-6 rounded-full font-black text-xl md:text-2xl hover:scale-110 transition-all shadow-[10px_10px_0px_#000] whitespace-nowrap"
                         >
                             <Instagram size={32} className="relative -left-1" />
                             Follow on Instagram
@@ -419,9 +419,9 @@ const App = () => {
             <footer className="bg-[#FFF500] py-20 border-t-8 border-black px-6">
                 <div className="max-w-6xl mx-auto">
                     <div className="mb-12">
-                        <h2 className="text-4xl font-black italic mb-6">令和８年 多治見市 三十路式</h2>
+                        <h2 className="text-2xl md:text-4xl font-black italic mb-6 whitespace-nowrap">令和８年 多治見市 三十路式</h2>
                         <div className="space-y-3 font-bold text-lg">
-                            <p className="flex items-center gap-2">主催：令和7年度多治見市三十路式実行委員会</p>
+                            <p className="flex items-center gap-2 text-sm md:text-lg whitespace-nowrap">主催：令和7年度多治見市三十路式実行委員会</p>
                             <p>共催：多治見市</p>
                             <p>お問合せ：多治見市役所 くらし人権課</p>
                             <p className="bg-black text-white inline-block px-2">TEL：0572-22-1134</p>

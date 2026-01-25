@@ -171,10 +171,10 @@ const App = () => {
                     <div className="bg-white border-4 border-black p-4 md:p-6 rounded-[30px] shadow-[8px_8px_0px_#000] inline-block mb-6">
                         <div className="text-center mb-4 font-black">
                             <p className="text-3xl md:text-5xl mb-2">2026.3.22 <span className="text-pink-500">(SUN)</span></p>
-                            <p className="text-lg md:text-xl text-gray-600 font-bold mb-1">開催まで...</p>
                         </div>
-                        <div className="flex justify-center items-baseline gap-2 mt-2">
-                            <div className="text-6xl md:text-8xl font-black font-mono leading-none tracking-tighter">
+                        <div className="flex justify-center items-baseline gap-4 mt-2">
+                            <p className="text-lg md:text-2xl text-gray-600 font-bold">開催まで...</p>
+                            <div className="text-7xl md:text-9xl font-black leading-none tracking-tighter font-['Mochiy_Pop_One'] text-[#FF00FF] drop-shadow-[2px_2px_0px_#000]">
                                 {timeLeft.days}
                             </div>
                             <div className="text-xl md:text-3xl font-bold">日</div>
